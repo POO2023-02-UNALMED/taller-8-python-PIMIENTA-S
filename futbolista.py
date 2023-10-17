@@ -5,7 +5,7 @@ from persona import Persona
 class Futbolista(Persona, Deportista):
     listaFutbolistas = []
 
-    def __init__(self, nombre, edad, altura, sexo, golesMarcados, añosPracticando, tarjetasRojas, piernaHabil):
+    def __init__(self, nombre, edad, altura, sexo,añosPracticando, golesMarcados, tarjetasRojas, piernaHabil):
         super().__init__(nombre, edad, altura, sexo)
         Deportista.__init__(self, añosPracticando)
         self._golesMarcados = golesMarcados
@@ -32,4 +32,4 @@ class Futbolista(Persona, Deportista):
         self._piernaHabil = piernaHabil
 
     def __str__(self):
-        return f"Mi nombre es {self.getNombre()} soy profesional en el deporte {self.getDeporte()} Tengo {str(self.getEdad())} años de edad y llevo {str(self.getAñosPracticando())} años en el deporte"
+        return "Mi nombre es {} soy profesional en el deporte {} Tengo {} años de edad y llevo {} años en el deporte".format(self.getNombre(), self.getDeporte(), self.getEdad(), self.getAñosPracticando())
